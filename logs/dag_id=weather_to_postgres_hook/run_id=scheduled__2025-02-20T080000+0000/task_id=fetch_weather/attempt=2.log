@@ -1,0 +1,28 @@
+[2025-02-20T09:23:19.417+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-20T09:23:19.454+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_to_postgres_hook.fetch_weather scheduled__2025-02-20T08:00:00+00:00 [queued]>
+[2025-02-20T09:23:19.467+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_to_postgres_hook.fetch_weather scheduled__2025-02-20T08:00:00+00:00 [queued]>
+[2025-02-20T09:23:19.467+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 2
+[2025-02-20T09:23:19.486+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): fetch_weather> on 2025-02-20 08:00:00+00:00
+[2025-02-20T09:23:19.496+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=249) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-20T09:23:19.498+0000] {standard_task_runner.py:72} INFO - Started process 251 to run task
+[2025-02-20T09:23:19.498+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_to_postgres_hook', 'fetch_weather', 'scheduled__2025-02-20T08:00:00+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/etl_weather.py', '--cfg-path', '/tmp/tmprty9zr25']
+[2025-02-20T09:23:19.499+0000] {standard_task_runner.py:105} INFO - Job 35: Subtask fetch_weather
+[2025-02-20T09:23:19.552+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_to_postgres_hook.fetch_weather scheduled__2025-02-20T08:00:00+00:00 [running]> on host 9f470da8c4e6
+[2025-02-20T09:23:19.892+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_to_postgres_hook' AIRFLOW_CTX_TASK_ID='fetch_weather' AIRFLOW_CTX_EXECUTION_DATE='2025-02-20T08:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-20T08:00:00+00:00'
+[2025-02-20T09:23:19.893+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-02-20T09:23:19.894+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-02-20T09:23:19.894+0000] {logging_mixin.py:190} INFO - Current task name:fetch_weather state:running start_date:2025-02-20 09:23:19.455584+00:00
+[2025-02-20T09:23:19.894+0000] {logging_mixin.py:190} INFO - Dag name:weather_to_postgres_hook and current dag run status:running
+[2025-02-20T09:23:19.895+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-02-20T09:23:20.774+0000] {python.py:240} INFO - Done. Returned value was: {'coord': {'lon': 106.8166, 'lat': -6.2}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': 'scattered clouds', 'icon': '03d'}], 'base': 'stations', 'main': {'temp': 304.9, 'feels_like': 308.54, 'temp_min': 303.15, 'temp_max': 306.03, 'pressure': 1008, 'humidity': 56, 'sea_level': 1008, 'grnd_level': 1006}, 'visibility': 7000, 'wind': {'speed': 3.6, 'deg': 310}, 'clouds': {'all': 40}, 'dt': 1740043400, 'sys': {'type': 2, 'id': 2033644, 'country': 'ID', 'sunrise': 1740005906, 'sunset': 1740050093}, 'timezone': 25200, 'id': 1642911, 'name': 'Jakarta', 'cod': 200}
+[2025-02-20T09:23:20.802+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-02-20T09:23:20.803+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=weather_to_postgres_hook, task_id=fetch_weather, run_id=scheduled__2025-02-20T08:00:00+00:00, execution_date=20250220T080000, start_date=20250220T092319, end_date=20250220T092320
+[2025-02-20T09:23:20.832+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-02-20T09:23:20.832+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-02-20T09:23:20.845+0000] {logging_mixin.py:190} INFO - Dag name:weather_to_postgres_hook queued_at:2025-02-20 09:12:20.879812+00:00
+[2025-02-20T09:23:20.846+0000] {logging_mixin.py:190} INFO - Task hostname:9f470da8c4e6 operator:PythonOperator
+[2025-02-20T09:23:20.880+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-20T09:23:20.918+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-20T09:23:20.920+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
