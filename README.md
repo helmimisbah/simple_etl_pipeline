@@ -6,6 +6,20 @@ A real-time data pipeline that uses Apache Airflow to fetch weather data from th
 
 This project monitors real-time weather conditions in Jakarta. It fetches data using Airflow’s HTTP integration, processes the response in memory, and then stores key information (e.g., temperature, humidity, weather description, timestamp) into PostgreSQL. This end-to-end pipeline is an excellent demonstration of your skills in data ingestion, processing, and database integration with Airflow.
 
+## DAG Overview
+
+The diagram below provides a high-level overview of the DAG's flow:
+<div align="center">
+  <img src="image/chart1.png" alt="Chart" width="300">
+</div>
+
+## Detailed Task Visualization
+
+This diagram breaks down each task with its internal steps:
+<div align="center">
+  <img src="image/chart2.png" alt="Chart" width="700">
+</div>
+
 ## Features
 
 - **Real-Time Data Ingestion:** Uses Airflow’s HttpHook to fetch current weather data.
